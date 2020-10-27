@@ -20,6 +20,7 @@
         <div class="item3">
             <form action="insert.php" method="POST">
                 <ul>
+                    <li><h2>INSERT: </h2></li>
                     <li>name:<input type="text" name="name"></li>
                     <li>tytyl:<input type="text" name="tytul"></li>
                     <li><input type="submit" value="INSERT"></li>
@@ -27,26 +28,28 @@
             </form>
         </div>
         <div class="item4">
-        <!-- <?php
-            echo("START");
-
-            $servername="127.0.0.1";
+        <?php
+            $servername="localhost";
             $username="Dawid";
-            $password="Dawid";
-            $dbname="bibliotreka";
+            $password="dawid";
+            $dbname="biblioteka";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            $result = $conn->query();
+            $result = $conn->query("SELECT * FROM ksiazki");
             
             echo("<table>");
+            echo("<tr>
+                <td>name</td>
+                <td>tytul</td>
+            </tr>");
             while($wiersz = $result->fetch_assoc()){
-                echo("tr");
-                echo("<td>".$wiersz['']."</td>");
-                echo("/tr");
+                echo("<tr>");
+                echo("<td>".$wiersz['name']."</td><td>".$wiersz['tytul']."</td>");
+                echo("</tr>");
             }
             echo("</table>");
-        ?> -->
+        ?> 
         </div>
     </div>
 

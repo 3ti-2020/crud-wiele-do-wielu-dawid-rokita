@@ -15,12 +15,15 @@
 
 .item3{
     grid-area: c;
-    background: rgb(123, 199, 223);
+    background: lightcoral;
 }
 
 .item4{
     grid-area: d;
-    background: rgb(223, 160, 123);
+    background: rgb(123, 200, 223);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid{
@@ -51,4 +54,10 @@ a{
     padding: 20px 50px;
     background: gray;
   
+}
+
+table,tr,td{
+    border-collapse: collapse;
+    background: lightslategray;
+    border: 2px solid black;
 }
