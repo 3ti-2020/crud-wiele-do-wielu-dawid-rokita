@@ -41,7 +41,7 @@
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            $result = $conn->query("SELECT * FROM lib_autor");
+            $result = $conn->query("SELECT name, tytul FROM lib_tytul, lib_autor_tytul, lib_autor WHERE lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
             
             echo("<table>");
             echo("<tr>
@@ -50,7 +50,7 @@
             </tr>");
             while($wiersz = $result->fetch_assoc()){
                 echo("<tr>");
-                echo("<td>".$wiersz['name']."</td><td>".$wiersz['id']."</td>");
+                echo("<td>".$wiersz['name']."</td><td>".$wiersz['tytul']."</td>");
                 echo("</tr>");
             }
             echo("</table>");
