@@ -94,6 +94,9 @@
             $zmienna2= $wiersz2['id_tytul'];
         } 
                 
+        $zmienna ++;
+        $zmienna2 ++;
+        
         $sql3  = "INSERT INTO `lib_autor_tytul`(`id_autor`, `id_tytul`) VALUES ('$zmienna', '$zmienna2')";
             
         echo($sql3);
