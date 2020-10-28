@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dawid Rokita</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -29,14 +29,19 @@
         </div>
         <div class="item4">
         <?php
-            $servername="localhost";
-            $username="Dawid";
-            $password="dawid";
-            $dbname="biblioteka";
+            // $servername="localhost";
+            // $username="Dawid";
+            // $password="dawid";
+            // $dbname="biblioteka";
+
+            $servername="remotemysql.com";
+            $username="4L24VPRVqQ";
+            $password="497eXnGLGd";
+            $dbname="4L24VPRVqQ";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
-            $result = $conn->query("SELECT * FROM ksiazki");
+            $result = $conn->query("SELECT * FROM lib_autor");
             
             echo("<table>");
             echo("<tr>
@@ -45,14 +50,12 @@
             </tr>");
             while($wiersz = $result->fetch_assoc()){
                 echo("<tr>");
-                echo("<td>".$wiersz['name']."</td><td>".$wiersz['tytul']."</td>");
+                echo("<td>".$wiersz['name']."</td><td>".$wiersz['id']."</td>");
                 echo("</tr>");
             }
             echo("</table>");
         ?> 
         </div>
     </div>
-
-    
 </body>
 </html>
