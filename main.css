@@ -5,7 +5,9 @@
 .item1{
     grid-area: a;
     background: rgb(210, 241, 151);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .item2{

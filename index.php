@@ -9,7 +9,7 @@
 <body>
     <div class="grid">
         <div class="item1">
-            <h1>DAWID ROKITA</h1>
+            <h1>DAWID ROKITA GR.2</h1>
         </div>
         <div class="item2">
             <ul>
