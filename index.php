@@ -9,12 +9,20 @@
 <body>
     <div class="grid">
         <div class="item1">
-            <h1>DAWID ROKITA GR.2</h1>
+            <div class="tytul">
+                <h1>DAWID ROKITA GR.2</h1>
+            </div>
+            <div class="menu">
+                <a href="#" class="btn 1">A</a>
+                <a href="#" class="btn 2">B</a>
+                <a href="index2.php" class="btn 3">C</a>
+                <a href="#" class="btn 4">D</a>
+            </div>
         </div>
         <div class="item2">
             <ul>
-                <li><a href="">LINK1</a></li>
-                <li><a href="">LINK2</a></li>
+                <li><a href="" class="link a">LINK1</a></li>
+                <li><a href="" class="link b">LINK2</a></li>
             </ul>
         </div>
         <div class="item3">
@@ -42,11 +50,17 @@
             $conn = new mysqli($servername, $username, $password, $dbname);
 
             $result = $conn->query("SELECT name, tytul FROM lib_tytul, lib_autor_tytul, lib_autor WHERE lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
+            $result2 = $conn->query("SELECT * FROM lib_tytul");
+            $result3 = $conn->query("SELECT * FROM lib_autor");
             
+//---------------------------TABELA KSIAZKI-------------------------------------
+            echo("<div class='upper'>");
+            echo("<div>");
             echo("<table>");
+            echo("<h3>TABELA KSIAZKI</h3>");
             echo("<tr>
-                <td>name</td>
-                <td>tytul</td>
+                <td>Autor</td>
+                <td>Tytul</td>
             </tr>");
             while($wiersz = $result->fetch_assoc()){
                 echo("<tr>");
@@ -54,8 +68,43 @@
                 echo("</tr>");
             }
             echo("</table>");
+            echo("</div>");
+            echo("</div>");
+            echo("<div class='lower'>");
+//---------------------------TABELA AUTORZY-------------------------------------
+            echo("<div>");
+            echo("<table>");
+            echo("<h3>TABELA AUTORZY</h3>");
+            echo("<tr>
+                <td>id</td>
+                <td>Autor</td>
+            </tr>");
+            while($wiersz3 = $result3->fetch_assoc()){
+                echo("<tr>");
+                echo("<td>".$wiersz3['id']."</td><td>".$wiersz3['name']."</td>");
+                echo("</tr>");
+            }
+            echo("</table>");
+            echo("</div>");
+//---------------------------TABELA TYTULY-------------------------------------
+            echo("<div>");
+            echo("<table>");
+            echo("<h3>TABELA TYTULY</h3>");
+            echo("<tr>
+                <td>id</td>
+                <td>Tytul</td>
+            </tr>");
+            while($wiersz2 = $result2->fetch_assoc()){
+                echo("<tr>");
+                echo("<td>".$wiersz2['id_tytul']."</td><td>".$wiersz2['tytul']."</td>");
+                echo("</tr>");
+            }
+            echo("</table>");
+            echo("<div>");
+            echo("</div>");
         ?> 
         </div>
     </div>
+
 </body>
 </html>

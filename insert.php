@@ -1,4 +1,10 @@
 <?php
+
+    // $servername="localhost";
+    // $username="Dawid";
+    // $password="dawid";
+    // $dbname="biblioteka";
+
     $servername="remotemysql.com";
     $username="4L24VPRVqQ";
     $password="497eXnGLGd";
@@ -107,5 +113,5 @@
 
     $conn->close();
 
-    header('Location: https://crud-dawid-rokita.herokuapp.com/');
+    header('Location: http://localhost/crud/index.php');
 ?>
