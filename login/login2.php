@@ -14,7 +14,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="main2.css">
     </head>
     <body>
         <div class="grid">
@@ -37,7 +37,6 @@
                 <h3>TAJNE INFORMACJE:</h3>
                 <ul>
                     <li>Delta Team dostał się do 2 etapu konkursu CanSat</li>
-                    <li></li>
                 </ul>
             </div>
         </div>
