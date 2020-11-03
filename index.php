@@ -20,8 +20,8 @@
             </div>
         </div>
         <div class="item2">
-            <a href="./karta/karta.html" class="link a">KARTA</a>
-            <a href="./login/login.php" class="link b">LOGIN</a>
+            <a href="./karta/karta.html" class="linka">KARTA</a>
+            <a href="#" class="linkb">LOGIN</a>
          
         </div>
         <div class="item3">
@@ -35,7 +35,14 @@
             </form>
         </div>
         <div class="item4">
+ 
         <?php
+
+            session_start();
+
+            if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){
+                unset($_SESSION['zalogowany']);
+            }
             // $servername="localhost";
             // $username="Dawid";
             // $password="dawid";
@@ -105,5 +112,19 @@
         </div>
     </div>
 
+
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <img src="profile.jpg" alt="">
+            <form action="./login/login2.php" method="POST">
+                LOGIN: <input class="inputy" type="text" name="login">
+                HASLO: <input class="inputy" type="text" name="haslo">
+                <input type="submit" value="zaloguj">
+            </form>
+        </div>
+    </div>
+
+        <script src="script.js"></script>
 </body>
 </html>

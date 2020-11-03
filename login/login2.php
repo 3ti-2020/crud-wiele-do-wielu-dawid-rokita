@@ -1,12 +1,27 @@
+
+<?php
+    
+    session_start();
+    
+    if(isset($_POST['haslo']) && $_POST['haslo'] == 'a' ){
+        $_SESSION['zalogowany'] = 1;
+    }
+
+    if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == 1){
+        // echo("ZALOGOWANY");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tajna strona DR</title>
-    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="/crud/main.css">
 </head>
 <body>
+    <!-- <h1>TUTAJ BEDZIE LOGOWANIE</h1> -->
+
     <div class="grid">
         <div class="item1">
             <div class="tytul">
@@ -20,9 +35,7 @@
             </div>
         </div>
         <div class="item2">
-            <a href="" class="linka">LINK1</a>
-            <a href="" class="linkb">LINK2</a>
-            
+            <a href='/crud/index.php?akcja=wyloguj' class="linka">WYLOGUJ</a>
         </div>
         <div class="item3"></div>
         <div class="item4">
@@ -33,6 +46,18 @@
             </ul>
         </div>
     </div>
-
+    
 </body>
 </html>
+
+<?php
+        
+    }else{
+        echo("NIE ZALOGOWANY");
+        echo("<li><a href='/crud/index.php'>POWROT</a></li>");
+    }
+    
+    
+    
+?>
+

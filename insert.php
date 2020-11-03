@@ -113,5 +113,5 @@
 
     $conn->close();
 
-    header('Location: http://localhost/crud/index.php');
+    header('Location: https://crud-dawid-rokita.herokuapp.com/');
 ?>
