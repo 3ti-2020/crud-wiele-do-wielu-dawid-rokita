@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="item2">
-                <a href='https://crud-dawid-rokita.herokuapp.com/' class="linka">WYLOGUJ</a>
+                <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj' class="linka">WYLOGUJ</a>
             </div>
             <div class="item3"></div>
             <div class="item4">
@@ -59,7 +59,7 @@
             <h3>BŁĘDNE HASŁO</h3>
         </div>
         <div class="lower">
-            <a href='https://crud-dawid-rokita.herokuapp.com/'>POWRÓT</a>
+            <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj>POWRÓT</a>
         </div>
         
     </body>

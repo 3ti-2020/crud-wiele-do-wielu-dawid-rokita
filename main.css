@@ -80,8 +80,21 @@ table{
 
 table,tr,td{
     border-collapse: collapse;
-    background: lightslategray;
+    /* background: lightslategray; */
     border: 2px solid black;
+}
+
+.head{
+    background: gray;
+}
+.son{
+    background: lightgray;
+    transition: 0.5s;
+}
+
+.son:hover{
+    background: gray;
+    transition: 0.5s;
 }
 
 .btn{
@@ -134,7 +147,7 @@ input{
     height: 25px;
     border-radius: 10px;
     border:0;
-    background: #8a95f8;
+    background: #5AB9EA;
 }
 
 .bg-modal{

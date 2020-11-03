@@ -60,12 +60,12 @@
             echo("<div>");
             echo("<table>");
             echo("<h3>TABELA KSIAZKI</h3>");
-            echo("<tr>
+            echo("<tr class='head'>
                 <td>Autor</td>
                 <td>Tytul</td>
             </tr>");
             while($wiersz = $result->fetch_assoc()){
-                echo("<tr>");
+                echo("<tr class='son'>");
                 echo("<td>".$wiersz['name']."</td><td>".$wiersz['tytul']."</td>");
                 echo("</tr>");
             }
@@ -77,12 +77,12 @@
             echo("<div>");
             echo("<table>");
             echo("<h3>TABELA AUTORZY</h3>");
-            echo("<tr>
+            echo("<tr class='head'>
                 <td>id</td>
                 <td>Autor</td>
             </tr>");
             while($wiersz3 = $result3->fetch_assoc()){
-                echo("<tr>");
+                echo("<tr  class='son'>");
                 echo("<td>".$wiersz3['id']."</td><td>".$wiersz3['name']."</td>");
                 echo("</tr>");
             }
@@ -92,12 +92,12 @@
             echo("<div>");
             echo("<table>");
             echo("<h3>TABELA TYTULY</h3>");
-            echo("<tr>
+            echo("<tr class='head'>
                 <td>id</td>
                 <td>Tytul</td>
             </tr>");
             while($wiersz2 = $result2->fetch_assoc()){
-                echo("<tr>");
+                echo("<tr  class='son'>");
                 echo("<td>".$wiersz2['id_tytul']."</td><td>".$wiersz2['tytul']."</td>");
                 echo("</tr>");
             }
@@ -108,7 +108,7 @@
         </div>
     </div>
 
-<!------------------------------ OKNO MODALNE LOGUJĄCE -------------------------------->
+<!---------------------- OKNO MODALNE LOGUJĄCE --------------------------------->
     <div class="bg-modal">
         <div class="modal-content">
             <div class="close">+</div>
