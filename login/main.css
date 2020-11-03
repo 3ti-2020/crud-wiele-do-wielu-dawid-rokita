@@ -1,63 +1,33 @@
-body{
-    margin:0;
+*{
+    margin: 0;
+    text-align: center;
 }
 
+h1{
+    color: rgb(196, 5, 5);
+    text-shadow: 0 0 20px black;
+}
 
-.bg-modal{
+.upper{
+    background-color: #5680E9;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.507);
-    position: absolute;
-    top: 0;
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    display:none;
+    flex-direction: column;
 }
 
-.modal-content{
-    width: 500px;
-    height: 300px;
-    background-color: white;
-    border-radius: 10px;
-    text-align: center;
-    padding: 25px;
-    position: relative;
+.lower{
+    background-color:#5680E9;
+    width: 100%;
+    height: 50vh;
 }
 
-img{
-    width: 90px;
-    height: 90px;
-}
-
-.button{
-    padding: 10px 20px;
-    text-align: center;
+a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    background: rgb(98, 98, 199);
-    border-radius: 15px;
-}
-
-.inputy{
-    width: 50%;
-    height: 25px;
+    color: black;
+    padding: 20px 50px;
+    background: gray;
     border-radius: 10px;
-    border: 1px solid rgb(98, 98, 199);
-    display: block;
-    margin: 15px auto;
-}
-
-.close{
-    position: absolute;
-    top: 0;
-    right: 14px;
-    font-size: 42px;
-    transform: rotate(45deg);
-    cursor: pointer;
-}
-
-.layout{
-    width: 10px;
-    height: 50px;
 }

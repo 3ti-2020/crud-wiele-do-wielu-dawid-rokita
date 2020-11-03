@@ -38,15 +38,11 @@
  
         <?php
 
-            session_start();
+            session_start();    //start sesji
 
-            if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){
-                unset($_SESSION['zalogowany']);
+            if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){  //sprawdzenie czy była akcja wyloguj
+                unset($_SESSION['zalogowany']);                         //odznaczenie opcji zalogowany
             }
-            // $servername="localhost";
-            // $username="Dawid";
-            // $password="dawid";
-            // $dbname="biblioteka";
 
             $servername="remotemysql.com";
             $username="4L24VPRVqQ";
@@ -112,14 +108,14 @@
         </div>
     </div>
 
-
+<!------------------------------ OKNO MODALNE LOGUJĄCE -------------------------------->
     <div class="bg-modal">
         <div class="modal-content">
             <div class="close">+</div>
             <img src="profile.jpg" alt="">
             <form action="./login/login2.php" method="POST">
                 LOGIN: <input class="inputy" type="text" name="login">
-                HASLO: <input class="inputy" type="text" name="haslo">
+                HASLO: <input class="inputy" type="text" name="haslo" placeholder="a">
                 <input type="submit" value="zaloguj">
             </form>
         </div>
