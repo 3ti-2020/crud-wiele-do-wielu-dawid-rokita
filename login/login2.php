@@ -59,7 +59,7 @@
             <h3>BŁĘDNE HASŁO</h3>
         </div>
         <div class="lower">
-            <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj>POWRÓT</a>
+            <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj'>POWRÓT</a>
         </div>
         
     </body>
