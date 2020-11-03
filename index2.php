@@ -20,10 +20,9 @@
             </div>
         </div>
         <div class="item2">
-            <ul>
-                <li><a href="" class="link a">LINK1</a></li>
-                <li><a href="" class="link b">LINK2</a></li>
-            </ul>
+            <a href="" class="link a">LINK1</a>
+            <a href="" class="link b">LINK2</a>
+            
         </div>
         <div class="item3"></div>
         <div class="item4">

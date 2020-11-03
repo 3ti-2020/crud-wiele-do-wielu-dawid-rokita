@@ -20,17 +20,16 @@
             </div>
         </div>
         <div class="item2">
-            <ul>
-                <li><a href="" class="link a">LINK1</a></li>
-                <li><a href="" class="link b">LINK2</a></li>
-            </ul>
+            <a href="./karta/karta.html" class="link a">KARTA</a>
+            <a href="./login/login.php" class="link b">LOGIN</a>
+         
         </div>
         <div class="item3">
             <form action="insert.php" method="POST">
                 <ul>
                     <li><h2>INSERT: </h2></li>
-                    <li>name:<input type="text" name="name"></li>
-                    <li>tytyl:<input type="text" name="tytul"></li>
+                    <li>AUTOR:<input type="text" name="name"></li>
+                    <li>TYTUL:<input type="text" name="tytul"></li>
                     <li><input type="submit" value="INSERT"></li>
                 </ul>
             </form>

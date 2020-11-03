@@ -4,7 +4,7 @@
 
 .item1{
     grid-area: a;
-    background: rgb(210, 241, 151);
+    background: #5680E9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,17 +13,21 @@
 
 .item2{
     grid-area: b;
-    background: lightcoral;
+    background: #84CEEB;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .item3{
     grid-area: c;
-    background: lightcoral;
+    background: #84CEEB;
 }
 
 .item4{
     grid-area: d;
-    background: rgb(123, 200, 223);
+    background: #5AB9EA;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +53,7 @@ ul{
 }
 
 li{
-    margin: 50px;
+    margin: 20px;
 }
 
 .link{
@@ -57,7 +61,7 @@ li{
     color: black;
     padding: 20px 50px;
     background: gray;
-  
+    margin: 20px;
 }
 
 table{
@@ -117,3 +121,10 @@ div{
     text-align: center;
 }
 
+input{
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border:0;
+    background: #8a95f8;
+}
