@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="item2">
-                <a href='/crud/index.php?akcja=wyloguj' class="linka">WYLOGUJ</a>
+                <a href='index.php?akcja=wyloguj' class="linka">WYLOGUJ</a>
             </div>
             <div class="item3"></div>
             <div class="item4">
@@ -60,7 +60,7 @@
             <h3>BŁĘDNE HASŁO</h3>
         </div>
         <div class="lower">
-            <a href='/crud/index.php'>POWRÓT</a>
+            <a href='index.php'>POWRÓT</a>
         </div>
         
     </body>
