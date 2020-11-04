@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawid Rokita</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -13,7 +14,7 @@
                 <h1>DAWID ROKITA GR.2</h1>
             </div>
             <div class="menu">
-                <a href="#" class="btn 1">A</a>
+                <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-dawid-rokita"  class="btn fab fa-github" class="btn 1"></a>
                 <a href="#" class="btn 2">B</a>
                 <a href="tajne.php" class="btn 3">C</a>
                 <a href="#" class="btn 4">D</a>
@@ -104,6 +105,8 @@
             echo("</table>");
             echo("<div>");
             echo("</div>");
+
+            $conn->close();
         ?> 
         </div>
     </div>
@@ -121,6 +124,6 @@
         </div>
     </div>
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

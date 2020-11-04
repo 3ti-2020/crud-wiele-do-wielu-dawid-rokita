@@ -87,6 +87,7 @@ table,tr,td{
 .head{
     background: gray;
 }
+
 .son{
     background: lightgray;
     transition: 0.5s;
@@ -208,4 +209,8 @@ img{
 .layout{
     width: 10px;
     height: 50px;
+}
+
+.fab{
+    font-size: 18px;
 }
