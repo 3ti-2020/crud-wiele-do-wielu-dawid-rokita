@@ -15,7 +15,7 @@
             <div class="menu">
                 <a href="#" class="btn 1">A</a>
                 <a href="#" class="btn 2">B</a>
-                <a href="index2.php" class="btn 3">C</a>
+                <a href="tajne.php" class="btn 3">C</a>
                 <a href="#" class="btn 4">D</a>
             </div>
         </div>
