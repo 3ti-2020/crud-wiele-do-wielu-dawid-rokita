@@ -282,3 +282,8 @@ p{
     color:rgb(206, 206, 206);
     margin-bottom: 5px;
 }
+
+.podtekst{
+    position: relative;
+    top: 320px;
+}
