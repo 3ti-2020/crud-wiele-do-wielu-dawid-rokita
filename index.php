@@ -118,8 +118,8 @@
             <div class="close">+</div>
             <img src="profile.jpg" alt="">
             <form action="./login/login2.php" method="POST">
-                LOGIN: <input class="inputy" type="text" name="login">
-                HASLO: <input class="inputy" type="text" name="haslo" placeholder="a">
+                LOGIN: <input class="inputy" type="text" name="login" placeholder="login...">
+                HASLO: <input class="inputy" type="text" name="haslo" placeholder="haslo...">
                 <input type="submit" value="zaloguj">
             </form>
         </div>
