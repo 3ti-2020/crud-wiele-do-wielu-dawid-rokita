@@ -1,8 +1,23 @@
 <?php
     session_start();
     
-    if(isset($_POST['haslo']) && $_POST['haslo'] == 'a' ){
-        $_SESSION['zalogowany'] = 1;
+    $servername="remotemysql.com";
+    $username="4L24VPRVqQ";
+    $password="497eXnGLGd";
+    $dbname="4L24VPRVqQ";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $result = $conn->query("SELECT * FROM user");
+
+    if(isset($_POST['haslo']) && isset($_POST['login'])){
+        while($wiersz = $result->fetch_assoc()){
+            if($wiersz['name']==$_POST['login'] && $wiersz['password']==$_POST['haslo'] && $wiersz['admin'] == 1){
+                $_SESSION['zalogowany'] = 1;
+                $_SESSION['admin'] = 1;
+            }else if($wiersz['name']==$_POST['login'] && $wiersz['password']==$_POST['haslo']){
+                $_SESSION['zalogowany'] = 1;
+            }
+        }
     }
 
     if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == 1){
@@ -32,6 +47,44 @@
             </div>
             <div class="item2">
                 <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj' class="linka">WYLOGUJ</a>
+
+                <div class="formularz">
+
+                    <?php
+                        if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+                            echo("<h4>MASZ UPRAWNIENIA ADMINISTRATORSKIE</h4>");  
+                    ?>
+                    <!-- --------------------------------FORMULARZ--------------- -->
+                        <form action="insertwypo.php" method="POST">
+                            <p>wybierz książkę:</p>
+                            <?php
+                                $result3 = $conn->query("SELECT id_autor_tytul ,name, tytul FROM lib_tytul, lib_autor_tytul, lib_autor WHERE lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
+                                echo("<select name='tytul'>");
+                                while($wiersz3 = $result3->fetch_assoc()){
+                                    echo("<option value='".$wiersz3['id_autor_tytul']."' name='tytul'>".$wiersz3['name'].":  ".$wiersz3['tytul']."</option>");
+                                }
+                                echo("</select>");
+                            ?>
+                            <p>wybierz uzytkownika:</p> 
+                            <?php
+                                $result4 = $conn->query("SELECT id_user, name FROM user");
+                                echo("<select name='user'>");
+                                while($wiersz4 = $result4->fetch_assoc()){
+                                    echo("<option value='".$wiersz4['id_user']."' name='user'>".$wiersz4['name']."</option>");
+                                }
+                                echo("</select>");
+                            ?>
+                            <input type="submit" value="dodaj">
+                        </form>
+                    <!-- ----------------------------KONIEC FORMULARZA---------------- -->
+                    <?php
+                        }else{
+                            echo("<h4>NIE MASZ UPRAWNIEN ADMINISTRATORSKIECH</h4>");
+                        }
+
+                    ?>
+                
+                </div>
             </div>
             <div class="item3"></div>
             <div class="item4">
@@ -44,21 +97,21 @@
                     $conn = new mysqli($servername, $username, $password, $dbname);
                 
 //-----------------------TABELA USER--------------------------------------
-                    $result = $conn->query("SELECT * FROM user");
+                    // $result = $conn->query("SELECT * FROM user");
 
-                    echo("<table>");
-                    echo("<h3>TABELA user</h3>");
-                    echo("<tr class='head'>
-                        <td>name</td>
-                        <td>password</td>
-                        <td>admin</td>
-                    </tr>");
-                    while($wiersz = $result->fetch_assoc()){
-                        echo("<tr class='son'>");
-                        echo("<td>".$wiersz['name']."</td><td>".$wiersz['password']."</td><td>".$wiersz['admin']."</td>");
-                        echo("</tr>");
-                    }
-                    echo("</table>");
+                    // echo("<table>");
+                    // echo("<h3>TABELA user</h3>");
+                    // echo("<tr class='head'>
+                    //     <td>name</td>
+                    //     <td>password</td>
+                    //     <td>admin</td>
+                    // </tr>");
+                    // while($wiersz = $result->fetch_assoc()){
+                    //     echo("<tr class='son'>");
+                    //     echo("<td>".$wiersz['name']."</td><td>".$wiersz['password']."</td><td>".$wiersz['admin']."</td>");
+                    //     echo("</tr>");
+                    // }
+                    // echo("</table>");
 
 //------------------------TABELA WYPOZYCZENIA---------------------------------
                     $result2 = $conn->query("SELECT id_wypozyczenia, lib_autor.name as autor, tytul, user.name as user FROM wypozyczenia, lib_tytul, lib_autor_tytul, lib_autor, user WHERE wypozyczenia.ksiazka = lib_autor_tytul.id_autor_tytul AND wypozyczenia.user = user.id_user AND lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
@@ -86,7 +139,6 @@
     </html>
 <?php
     }else{
-
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -98,7 +150,7 @@
     <body>
         <div class="upper">
             <h1>NIE ZALOGOWANO</h1>
-            <h3>BŁĘDNE HASŁO</h3>
+            <h3>BŁĘDNE HASŁO LUB LOGIN</h3>
         </div>
         <div class="lower">
             <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj'>POWRÓT</a>
@@ -110,4 +162,3 @@
 <?php
     }
 ?>
-

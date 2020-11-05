@@ -16,7 +16,7 @@
             <div class="menu">
                 <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-dawid-rokita"  class="btn fab fa-github" class="btn 1"></a>
                 <a href="#" class="btn 2">B</a>
-                <a href="tajna.php" class="btn 3">C</a>
+                <a href="tajne.php" class="btn 3">C</a>
                 <a href="#" class="btn 4">D</a>
             </div>
         </div>
@@ -43,6 +43,7 @@
 
             if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){  //sprawdzenie czy była akcja wyloguj
                 unset($_SESSION['zalogowany']);                         //odznaczenie opcji zalogowany
+                unset($_SESSION['admin']); 
             }
 
             $servername="remotemysql.com";
