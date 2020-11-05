@@ -39,7 +39,7 @@
                     <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-dawid-rokita"  class="btn" class="btn 1">github <i class="fab fa-github"></i></a>
                     <a href="#" class="robocze btn 2">tabele <i class="fas fa-table"></i></a>
                     <a href="../index.php" class="btn 3">home <i class="fas fa-home"></i></a>
-                    <a href="./karta/karta.html" class="btn 4">karta <i class="fas fa-address-card"></i></a>
+                    <a href="../karta/karta.html" class="btn 4">karta <i class="fas fa-address-card"></i></a>
                 </div>
                 <div class="tytul">
                     <h1>STRONA WYPOZYCZENIA</h1>
