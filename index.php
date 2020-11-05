@@ -10,28 +10,28 @@
 <body>
     <div class="grid">
         <div class="item1">
+            <div class="menu">
+                <button class="fas fa-bars leftmenu"></button>
+                <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-dawid-rokita"  class="btn" class="btn 1">github <i class="fab fa-github"></i></a>
+                <a href="#" class="robocze btn 2">tabele <i class="fas fa-table"></i></a>
+                <a href="tajna.php" class="btn 3">zakazane <i class="fas fa-ban"></i></a>
+                <a href="./karta/karta.html" class="btn 4">karta <i class="fas fa-address-card"></i></a>
+            </div>
             <div class="tytul">
                 <h1>DAWID ROKITA GR.2</h1>
             </div>
-            <div class="menu">
-                <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-dawid-rokita"  class="btn fab fa-github" class="btn 1"></a>
-                <a href="#" class="btn 2">B</a>
-                <a href="tajne.php" class="btn 3">C</a>
-                <a href="#" class="btn 4">D</a>
-            </div>
         </div>
         <div class="item2">
-            <a href="./karta/karta.html" class="linka">KARTA</a>
-            <a href="#" class="linkb">LOGIN</a>
-         
+            <a href="#" class="fas fa-sign-in-alt linkb"> ZALOGUJ</a>
+            <a href="#" class="fas fa-plus linka"> DODAWAJ</a>
         </div>
         <div class="item3">
             <form action="insert.php" method="POST">
                 <ul>
-                    <li><h2>INSERT: </h2></li>
+                    <li><h3>DODAJ NOWE KSIĄŻKI: </h3></li>
                     <li>AUTOR:<input type="text" name="name"></li>
                     <li>TYTUL:<input type="text" name="tytul"></li>
-                    <li><input type="submit" value="INSERT"></li>
+                    <li><input type="submit" value="DODAJ"></li>
                 </ul>
             </form>
         </div>

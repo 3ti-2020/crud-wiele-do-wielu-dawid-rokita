@@ -24,10 +24,11 @@ h1{
     height: 50vh;
 }
 
-a{
+.a{
     text-decoration: none;
     color: black;
-    padding: 20px 50px;
+    padding: 20px 60px;
     background: gray;
+    margin-top: 20px;
     border-radius: 10px;
 }
