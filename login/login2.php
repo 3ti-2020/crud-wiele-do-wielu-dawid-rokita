@@ -57,13 +57,12 @@
                 <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj' class="linka">WYLOGUJ <i class="fas fa-sign-out-alt"></i></a>
 
                 <div class="formularz">
-
                     <?php
                         if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
                             echo("<h4>MASZ UPRAWNIENIA ADMINISTRATORSKIE</h4>");  
                     ?>
                     <!-- --------------------------------FORMULARZ--------------- -->
-                        <form action="insertwypo.php" method="POST">
+                        <form action="insertwypo.php" method="POST" class="insertwypo">
                             <p>wybierz książkę:</p>
                             <?php
                                 $result3 = $conn->query("SELECT id_autor_tytul ,name, tytul FROM lib_tytul, lib_autor_tytul, lib_autor WHERE lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
@@ -82,7 +81,7 @@
                                 }
                                 echo("</select>");
                             ?>
-                            <input type="submit" value="dodaj">
+                            <input type="submit" value="WYPOŻYCZ">
                         </form>
                     <!-- ----------------------------KONIEC FORMULARZA---------------- -->
                     <?php
@@ -103,43 +102,54 @@
                     $dbname="4L24VPRVqQ";
         
                     $conn = new mysqli($servername, $username, $password, $dbname);
-                
-//-----------------------TABELA USER--------------------------------------
-                    // $result = $conn->query("SELECT * FROM user");
-
-                    // echo("<table>");
-                    // echo("<h3>TABELA user</h3>");
-                    // echo("<tr class='head'>
-                    //     <td>name</td>
-                    //     <td>password</td>
-                    //     <td>admin</td>
-                    // </tr>");
-                    // while($wiersz = $result->fetch_assoc()){
-                    //     echo("<tr class='son'>");
-                    //     echo("<td>".$wiersz['name']."</td><td>".$wiersz['password']."</td><td>".$wiersz['admin']."</td>");
-                    //     echo("</tr>");
-                    // }
-                    // echo("</table>");
-
-//------------------------TABELA WYPOZYCZENIA---------------------------------
                     $result2 = $conn->query("SELECT id_wypozyczenia, lib_autor.name as autor, tytul, user.name as user, data_wyp, data_do_odania FROM wypozyczenia, lib_tytul, lib_autor_tytul, lib_autor, user WHERE wypozyczenia.ksiazka = lib_autor_tytul.id_autor_tytul AND wypozyczenia.user = user.id_user AND lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
 
-                    echo("<table>");
-                    echo("<h3>TABELA WYPOZYCZENIA</h3>");
-                    echo("<tr class='head'>
-                        <td>autor</td>
-                        <td>tytul</td>
-                        <td>uzytkownik</td>
-                        <td>data wypozyczenia</td>
-                        <td>data do oddania</td>
-                    </tr>");
-                    while($wiersz2 = $result2->fetch_assoc()){
-                        echo("<tr class='son'>");
-                        echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td>");
-                        echo("</tr>");
+                    if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+                    //------------------------TABELA WYPOZYCZENIA ADMIN---------------------------------
+                        echo("<table>");
+                        echo("<h3>TABELA WYPOZYCZENIA</h3>");
+                        echo("<tr class='head'>
+                            <td>autor</td>
+                            <td>tytul</td>
+                            <td>uzytkownik</td>
+                            <td>data wypozyczenia</td>
+                            <td>data do oddania</td>
+                            <td>oddaj</td>
+                        </tr>");
+                        while($wiersz2 = $result2->fetch_assoc()){
+                            echo("<tr class='son'>");
+                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td>
+                            
+                            
+                                <td>
+                                    <form action='delete.php' method='POST'>
+                                    <input type='hidden' name='tytul' value='".$wiersz2['id_wypozyczenia']."'>
+                                    <input type='submit' name='POST' value='oddaj' class='oddaj'>
+                                    </form>
+                                </td>"
+                            
+                            );
+                            echo("</tr>");
+                        }
+                        echo("</table>");        
+                    }else{
+                    //------------------------TABELA WYPOZYCZENIA GUEST---------------------------------
+                        echo("<table>");
+                        echo("<h3>TABELA WYPOZYCZENIA</h3>");
+                        echo("<tr class='head'>
+                            <td>autor</td>
+                            <td>tytul</td>
+                            <td>uzytkownik</td>
+                            <td>data wypozyczenia</td>
+                            <td>data do oddania</td>
+                        </tr>");
+                        while($wiersz2 = $result2->fetch_assoc()){
+                            echo("<tr class='son'>");
+                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td>");
+                            echo("</tr>");
+                        }
+                        echo("</table>");  
                     }
-                    echo("</table>");
-                
                     $conn->close();
                 ?>
             </div>
