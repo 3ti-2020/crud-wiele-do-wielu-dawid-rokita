@@ -9,7 +9,7 @@
     $ksiazka=$_POST['tytul'];
     $user=$_POST['user'];
 
-    $sql = "INSERT INTO `wypozyczenia`( `ksiazka`, `user`) VALUES ($ksiazka, $user)";
+    $sql = "INSERT INTO `wypozyczenia`( `ksiazka`, `user`, `data_wyp`, `data_do_odania`) VALUES ($ksiazka, $user, NOW(), NOW()+INTERVAL 3 WEEK)";
 
     echo($sql);
 

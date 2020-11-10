@@ -41,7 +41,7 @@
                     <a href="../index.php" class="btn 3">home <i class="fas fa-home"></i></a>
                     <a href="../karta/karta.html" class="btn 4">karta <i class="fas fa-address-card"></i></a>
                 </div>
-                <div class="tytul">
+                <div class="tytul"> 
                     <h1>STRONA WYPOZYCZENIA</h1>
                 </div>
                 
@@ -81,7 +81,7 @@
                     <?php
                         }else{
                             echo("<h4>NIE MASZ UPRAWNIEN ADMINISTRATORSKICH</h4>");
-                            echo("<p>Nie możesz wpisywać nowych wypożyczeń</p>");
+                            echo("<p class='podtekst'>Nie możesz wpisywać nowych wypożyczeń</p>");
                         }
                     ?>
                 
@@ -115,19 +115,20 @@
                     // echo("</table>");
 
 //------------------------TABELA WYPOZYCZENIA---------------------------------
-                    $result2 = $conn->query("SELECT id_wypozyczenia, lib_autor.name as autor, tytul, user.name as user FROM wypozyczenia, lib_tytul, lib_autor_tytul, lib_autor, user WHERE wypozyczenia.ksiazka = lib_autor_tytul.id_autor_tytul AND wypozyczenia.user = user.id_user AND lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
+                    $result2 = $conn->query("SELECT id_wypozyczenia, lib_autor.name as autor, tytul, user.name as user, data_wyp, data_do_odania FROM wypozyczenia, lib_tytul, lib_autor_tytul, lib_autor, user WHERE wypozyczenia.ksiazka = lib_autor_tytul.id_autor_tytul AND wypozyczenia.user = user.id_user AND lib_tytul.id_tytul = lib_autor_tytul.id_tytul AND lib_autor.id=lib_autor_tytul.id_autor");
 
                     echo("<table>");
                     echo("<h3>TABELA WYPOZYCZENIA</h3>");
                     echo("<tr class='head'>
-                        <td>id</td>
                         <td>autor</td>
                         <td>tytul</td>
                         <td>uzytkownik</td>
+                        <td>data wypozyczenia</td>
+                        <td>data do oddania</td>
                     </tr>");
                     while($wiersz2 = $result2->fetch_assoc()){
                         echo("<tr class='son'>");
-                        echo("<td>".$wiersz2['id_wypozyczenia']."</td><td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td>");
+                        echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td>");
                         echo("</tr>");
                     }
                     echo("</table>");
