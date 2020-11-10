@@ -42,7 +42,14 @@
                     <a href="../karta/karta.html" class="btn 4">karta <i class="fas fa-address-card"></i></a>
                 </div>
                 <div class="tytul"> 
-                    <h1>STRONA WYPOZYCZENIA</h1>
+                    <h1 class="tytulstrony">STRONA WYPOZYCZENIA</h1>
+                    <?php
+                        if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+                            echo("<h5>ZALOGOWANO JAKO ADMINISTRATOR</h5>");
+                        }else{
+                            echo("<h5>ZALOGOWANO JAKO GOŚĆ</h5>");
+                        }  
+                    ?>
                 </div>
                 
             </div>

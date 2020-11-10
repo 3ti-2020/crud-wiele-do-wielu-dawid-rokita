@@ -4,7 +4,7 @@
 }
 
 h1{
-    color: rgb(196, 5, 5);
+    color:  rgb(231, 162, 162);
     text-shadow: 0 0 20px black;
 }
 
@@ -24,7 +24,7 @@ h1{
     height: 50vh;
 }
 
-.a{
+a{
     text-decoration: none;
     color: black;
     padding: 20px 60px;
