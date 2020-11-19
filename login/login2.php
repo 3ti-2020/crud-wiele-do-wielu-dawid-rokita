@@ -117,8 +117,10 @@
                             <td>oddaj</td>
                         </tr>");
                         while($wiersz2 = $result2->fetch_assoc()){
+                            $date1 = $wiersz2['data_do_odania'];
+                            $date2 = date("Y-m-d");
                             echo("<tr class='son'>");
-                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td>
+                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td><td>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>
                             
                             
                                 <td>
@@ -142,11 +144,13 @@
                             <td>uzytkownik</td>
                             <td>data wypozyczenia</td>
                             <td>data do oddania</td>
-                            <td>curdate</td>
+                            <td>dni do oddania</td>
                         </tr>");
                         while($wiersz2 = $result2->fetch_assoc()){
+                            $date1 = $wiersz2['data_do_odania'];
+                            $date2 = date("Y-m-d");
                             echo("<tr class='son'>");
-                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td><td>".date("Y-m-d")."</td>");
+                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td><td>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>");
                             echo("</tr>");
                         }
                         echo("</table>");  
