@@ -120,17 +120,20 @@
                             $date1 = $wiersz2['data_do_odania'];
                             $date2 = date("Y-m-d");
                             echo("<tr class='son'>");
-                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td><td>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>
-                            
-                            
-                                <td>
-                                    <form action='delete.php' method='POST'>
+                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td>");
+                            if(((strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)) < 3){
+                                echo("<td class='bgred'>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>");
+                            }else{
+                                echo("<td class='bggreen'>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>");
+                            }
+                            echo("<td>
+                                <form action='delete.php' method='POST'>
                                     <input type='hidden' name='tytul' value='".$wiersz2['id_wypozyczenia']."'>
                                     <input type='submit' name='POST' value='oddaj' class='oddaj'>
-                                    </form>
-                                </td>"
-                            
-                            );
+                                </form>
+                            </td>");
+
+                         
                             echo("</tr>");
                         }
                         echo("</table>");        
@@ -149,8 +152,14 @@
                         while($wiersz2 = $result2->fetch_assoc()){
                             $date1 = $wiersz2['data_do_odania'];
                             $date2 = date("Y-m-d");
-                            echo("<tr class='son'>");
-                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td><td>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>");
+                            echo("<tr class='sono'>");
+                            echo("<td class='son'>".$wiersz2['autor']."</td><td class='son'>".$wiersz2['tytul']."</td><td class='son'>".$wiersz2['user']."</td><td class='son'>".$wiersz2['data_wyp']."</td><td class='son'>".$wiersz2['data_do_odania']."</td>");
+                            
+                            if(((strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)) < 3){
+                                echo("<td class='bgred'>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>");
+                            }else{
+                                echo("<td class='bggreen'>".(strtotime($date1) - strtotime($date2)) / (60 * 60 * 24)."</td>");
+                            }
                             echo("</tr>");
                         }
                         echo("</table>");  

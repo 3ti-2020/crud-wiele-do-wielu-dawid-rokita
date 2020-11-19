@@ -113,7 +113,7 @@ table,tr,td{
     transition: 0.5s;
 }
 
-.son:hover{
+.sono:hover{
     background: gray;
     transition: 0.5s;
 }
@@ -303,4 +303,12 @@ p{
 .oddaj:hover{
     border: 1px solid black;
     background: #37b4e6;
+}
+
+.bgred{
+    background: rgb(214, 107, 107);
+}
+
+.bggreen{
+    background: rgb(145, 224, 145);
 }
