@@ -11,7 +11,7 @@
 
     if(isset($_POST['haslo']) && isset($_POST['login'])){
         while($wiersz = $result->fetch_assoc()){
-            if($wiersz['name']==$_POST['login'] && $wiersz['password']==$_POST['haslo'] && $wiersz['admin'] == 1){
+            if($wiersz['name']==$_POST['login'] && $wiersz['password']==$_POST['haslo'] && $wiersz['role'] == 2){
                 $_SESSION['zalogowany'] = 1;
                 $_SESSION['admin'] = 1;
             }else if($wiersz['name']==$_POST['login'] && $wiersz['password']==$_POST['haslo']){
@@ -114,6 +114,7 @@
                             <td>uzytkownik</td>
                             <td>data wypozyczenia</td>
                             <td>data do oddania</td>
+                            <td>dni do oddania</td>
                             <td>oddaj</td>
                         </tr>");
                         while($wiersz2 = $result2->fetch_assoc()){
