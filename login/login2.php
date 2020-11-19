@@ -184,6 +184,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
@@ -192,8 +193,23 @@
             <h3>BŁĘDNE HASŁO LUB LOGIN</h3>
         </div>
         <div class="lower">
-            <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj'>POWRÓT</a>
+            <a href='https://crud-dawid-rokita.herokuapp.com?akcja=wyloguj' class=""><i class="fas fa-arrow-left"></i> POWRÓT</a>
+            <a href='#' class="zalogujsie">ZALOGUJ <i class="fas fa-sign-in-alt"></i></a>
         </div>
+
+        <div class="bg-modal">
+            <div class="modal-content">
+                <div class="close">+</div>
+                <img src="../profile.jpg" alt="">
+                <form action="login2.php" method="POST">
+                    LOGIN: <input class="inputy" type="text" name="login" placeholder="login...">
+                    HASLO: <input class="inputy" type="text" name="haslo" placeholder="haslo...">
+                    <input type="submit" value="zaloguj">
+                </form>
+            </div>
+        </div>
+
+        <script src="script3.js"></script>
         
     </body>
     </html>

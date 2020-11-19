@@ -102,6 +102,16 @@ li{
     border-radius: 10px;
 }
 
+.linkbb{
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    padding: 20px 60px;
+    background: #84CEEB;
+    top: 220px;
+    border-radius: 10px;
+}
+
 table{
     margin: 50px;
     margin-top: 5px;
@@ -143,8 +153,9 @@ table,tr,td{
     width: 100%;
     height: 60%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .menu{
@@ -263,4 +274,9 @@ img{
     cursor: pointer;
     font-size: 35px;
     outline:none;
+}
+
+h5{
+    padding: 10px;
+    color: rgb(231, 162, 162);
 }

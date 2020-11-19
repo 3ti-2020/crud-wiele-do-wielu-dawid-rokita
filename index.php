@@ -1,3 +1,12 @@
+<?php
+     session_start();    //start sesji
+
+     if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){  //sprawdzenie czy była akcja wyloguj
+         unset($_SESSION['zalogowany']);                         //odznaczenie opcji zalogowany
+         unset($_SESSION['admin']); 
+     }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +25,29 @@
                 <a href="#" class="robocze btn 2">tabele <i class="fas fa-table"></i></a>
                 <a href="tajna.php" class="btn 3">zakazane <i class="fas fa-ban"></i></a>
                 <a href="./karta/karta.html" class="btn 4">karta <i class="fas fa-address-card"></i></a>
+                <a href="./login/login2.php" class="btn 5">wypożycz <i class="fas fa-book"></i></a>
             </div>
             <div class="tytul">
                 <h1>DAWID ROKITA GR.2</h1>
+                <?php
+                    if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == 1){
+                        if(isset($_SESSION['admin']) && $_SESSION['admin'] == 1){
+                            echo("<h5>ZALOGOWANO JAKO ADMINISTRATOR</h5>");
+                        }else{
+                            echo("<h5>ZALOGOWANO JAKO GOŚĆ</h5>");
+                        }  
+                    }
+                    ?>
             </div>
         </div>
         <div class="item2">
-            <a href="#" class="fas fa-sign-in-alt linkb"> ZALOGUJ</a>
+            <?php
+                if(isset($_SESSION['zalogowany']) && $_SESSION['zalogowany'] == 1){
+                   echo("<a href='index.php?akcja=wyloguj' class='fas fa-sign-out-alt linkb'> WYLOGUJ</a>");
+                }else{
+                    echo("<a href='#' class='fas fa-sign-in-alt linkb'> ZALOGUJ</a>");
+                }
+            ?>
             <a href="#" class="fas fa-plus linka"> DODAWAJ</a>
         </div>
         <div class="item3">
@@ -39,12 +64,7 @@
  
         <?php
 
-            session_start();    //start sesji
-
-            if(isset($_GET['akcja']) && $_GET['akcja'] == 'wyloguj' ){  //sprawdzenie czy była akcja wyloguj
-                unset($_SESSION['zalogowany']);                         //odznaczenie opcji zalogowany
-                unset($_SESSION['admin']); 
-            }
+           
 
             $servername="remotemysql.com";
             $username="4L24VPRVqQ";
