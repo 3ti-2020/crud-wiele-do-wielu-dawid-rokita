@@ -142,13 +142,18 @@
                             <td>uzytkownik</td>
                             <td>data wypozyczenia</td>
                             <td>data do oddania</td>
+                            <td>curdate</td>
                         </tr>");
                         while($wiersz2 = $result2->fetch_assoc()){
                             echo("<tr class='son'>");
-                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td>");
+                            echo("<td>".$wiersz2['autor']."</td><td>".$wiersz2['tytul']."</td><td>".$wiersz2['user']."</td><td>".$wiersz2['data_wyp']."</td><td>".$wiersz2['data_do_odania']."</td><td>".date("Y-m-d")."</td>");
                             echo("</tr>");
                         }
                         echo("</table>");  
+
+
+
+
                     }
                     $conn->close();
                 ?>
