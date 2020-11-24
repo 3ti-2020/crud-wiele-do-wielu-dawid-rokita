@@ -1,7 +1,9 @@
 const tekst = document.querySelector(".tekst");
 const dodaj = document.querySelector(".dodaj");
-const lista1 = document.querySelector(".lista1");
+const lista = document.querySelector(".lista");
+
 
 dodaj.addEventListener('click', function(){
-    lista1.innerHTML = tekst.value;
+    lista.innerHTML =  lista.innerHTML + "<ul><li>" + tekst.value + "</li></ul>";
 })
+
