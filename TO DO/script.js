@@ -1,10 +1,34 @@
-const tekst = document.querySelector(".tekst");
-const dodaj = document.querySelector(".dodaj");
-const lista = document.querySelector(".lista");
+const todoInput = document.querySelector('.todo_input');
+const todoButton = document.querySelector('.todo_button');
+const todoList = document.querySelector('.todo_list');
 
+todoButton.addEventListener("click", addTodo)
+todoList.addEventListener("click", deleteCheck)
 
-dodaj.addEventListener('click', function(){
-    lista.innerHTML =  lista.innerHTML + "<li>" + tekst.value + "<a class='del'> X</a></li>";
-    tekst.value = "";
-})
+function addTodo(event) {
+    event.preventDefault();
+    const todoDiv = document.createElement('div');
+    todoDiv.classList.add('todo');
+    const newTodo = document.createElement('li');
+    newTodo.innerText = todoInput.value;
+    newTodo.classList.add('todo_item');
+    todoDiv.appendChild(newTodo);
+    if(todoInput.value === ""){
+        return null
+    }
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'X';
+    deleteButton.classList.add('delete_btn')
+    todoDiv.appendChild(deleteButton);
+    todoList.appendChild(todoDiv);
+    todoInput.value = ""
+}
 
+function deleteCheck(e) {
+    const item = e.target;
+
+    if (item.classList[0] === "delete_btn") {
+        const todo = item.parentElement;
+        todo.remove()
+    }
+}
