@@ -1,3 +1,49 @@
-.del{
-    cursor: pointer;
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cont{
+    width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgb(25, 150, 172);
+    border-radius: 40px;
+}
+
+ul{
+
+    list-style: none;
+}
+
+li{
+    position: absolute;
+    padding: 10px 30px;
+}
+
+.delete_btn{
+    position: relative;
+    left: 0;
+    top: 5px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.delete_btn:hover{
+    position: relative;
+    left: 0;
+    top: 5px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 0;
+    background: rgb(100, 228, 168);
+}
+
+form{
+    
 }
