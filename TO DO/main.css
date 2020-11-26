@@ -3,16 +3,19 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background:  rgba(25, 150, 172, 0.329);
 }
 
 .cont{
-    width: 30%;
+    width: 280px;
     height: auto;
+    padding: 0 0 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     background: rgb(25, 150, 172);
-    border-radius: 40px;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid black;
 }
 
 ul{
@@ -45,5 +48,27 @@ li{
 }
 
 form{
-    
+    background:  rgb(100, 228, 168);
+    width: 280px;
+    padding: 10px 0px;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 0;
+    text-align: center;
+    border: 1px solid black;
+}
+
+input{
+    border:0;
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(132, 169, 175, 0.651);
+    border: 1px solid black;
+}
+
+.todo_button{
+    border-radius: 5px;
+    border:0;
+    height: 20px;
+    background: rgb(25, 150, 172);
 }
