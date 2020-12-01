@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    background: rgb(58, 54, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.question{
+    background: gray;
+    width: 800px;
+    margin: 20px;
+}
+
+h1{
+    color: white;
+}
+
+.question_answerItem{
+    font-size: 20px;
+}
+
+.question_details{
+    margin: 10px;
+    background: rgb(199, 199, 199);
+    width: 150px;
+}
