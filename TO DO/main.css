@@ -3,7 +3,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background:  rgba(25, 150, 172, 0.329);
+    background:  rgb(58, 54, 54);
 }
 
 .cont{
@@ -35,6 +35,9 @@ li{
     margin: 5px 0px;
     border-radius: 10px;
     border: 0;
+    background: gray;
+    color: white;
+    border: 1px solid black;
 }
 
 .delete_btn:hover{
@@ -44,11 +47,12 @@ li{
     margin: 5px 0px;
     border-radius: 10px;
     border: 0;
-    background: rgb(100, 228, 168);
+    background: black;
+    border: 1px solid black;
 }
 
 form{
-    background:  rgb(100, 228, 168);
+    background: gray;
     width: 280px;
     padding: 10px 0px;
     border-radius: 20px 20px 0 0;
@@ -71,4 +75,9 @@ input{
     border:0;
     height: 20px;
     background: rgb(25, 150, 172);
+    border: 1px solid black;
+}
+
+h4{
+    color: white;
 }
