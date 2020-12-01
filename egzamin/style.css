@@ -9,7 +9,7 @@ body{
 .question{
     background: gray;
     width: 800px;
-    margin: 20px;
+    margin-bottom: 40px;
     border-radius: 10px;
 }
 
@@ -32,4 +32,14 @@ h1{
 h3{
     margin-left: 10px;
     margin-right: 10px;
+}
+
+span{
+    color: rgb(20, 167, 20);
+}
+
+h6{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 0;
 }
