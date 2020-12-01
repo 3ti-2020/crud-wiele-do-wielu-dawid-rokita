@@ -21,6 +21,7 @@
         <div class="item1">
             <div class="menu">
                 <button class="fas fa-bars leftmenu"></button>
+                <a href="./egzamin/index.html" class="btn 5">egzamin <i class="fas fa-graduation-cap"></i></a>
                 <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-dawid-rokita"  class="btn" class="btn 1">github <i class="fab fa-github"></i></a>
                 <a href="#" class="robocze btn 2">tabele <i class="fas fa-table"></i></a>
                 <a href="./TO DO/index.html" class="btn 3">ToDo <i class="fas fa-list-ul"></i></a>
