@@ -27,6 +27,7 @@
                 <a href="./TO DO/index.html" class="btn 3">ToDo <i class="fas fa-list-ul"></i></a>
                 <a href="./karta/karta.html" class="btn 4">karta <i class="fas fa-address-card"></i></a>
                 <a href="./login/login2.php" class="btn 5">wypożycz <i class="fas fa-book"></i></a>
+                <a href="./BLOG/index.php" class="btn 6">BLOG <i class="fas fa-book"></i></a>
             </div>
             <div class="tytul">
                 <h1>DAWID ROKITA GR.2</h1>

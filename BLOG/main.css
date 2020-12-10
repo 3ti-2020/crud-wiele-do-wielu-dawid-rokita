@@ -1,0 +1,25 @@
+table{
+    margin: 50px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+table,tr,td{
+    border-collapse: collapse;
+    /* background: lightslategray; */
+    border: 2px solid black;
+}
+
+.head{
+    background: gray;
+}
+
+.son{
+    background: lightgray;
+    transition: 0.5s;
+}
+
+.son:hover{
+    background: gray;
+    transition: 0.5s;
+}
