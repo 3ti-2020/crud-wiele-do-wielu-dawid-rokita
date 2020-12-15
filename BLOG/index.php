@@ -15,7 +15,12 @@
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $result = $conn->query("SELECT Distinct tytul, tekst, id FROM posty");        
+        if(isset($_GET['akcja'])){  //sprawdzenie czy został klikniety jakis tag
+            $zmienna = $_GET['akcja'];
+            $result = $conn->query("SELECT Distinct tytul, tekst, posty.id FROM `posty_tagi`, posty, tagi WHERE posty_tagi.id_posty = posty.id AND posty_tagi.id_tagi = tagi.id AND nazwa = '$zmienna'"); 
+        }else{
+            $result = $conn->query("SELECT Distinct tytul, tekst, id FROM posty");  
+        }     
     ?>
 
 <div class="container">
@@ -24,14 +29,13 @@
     </div>
     <div class="b">
         <?php
-     
                 while($wiersz = $result->fetch_assoc()){
                     echo("<div class='header'>");
                         echo("<h1>".$wiersz['tytul']."</h1>");
                         $posty = $wiersz["id"];
                         $result2 = $conn->query("SELECT nazwa FROM `posty_tagi`, posty, tagi WHERE posty_tagi.id_posty = posty.id AND posty_tagi.id_tagi = tagi.id AND posty_tagi.id_posty = $posty");
                     while($wiersz2 = $result2->fetch_assoc()){
-                        echo("<tr><b><a href='#".$wiersz2['nazwa']."'>".$wiersz2['nazwa']."</a></b></tr>, ");
+                        echo("<tr><b><a href='?akcja=".$wiersz2['nazwa']."'>".$wiersz2['nazwa']."</a></b></tr>, ");
                     } 
                     echo("</div>");
                     echo("<div class='main'>");
