@@ -32,6 +32,7 @@
     </div>
     <div class="tytul">
         <h1>BLOG</h1>
+        <a href="index.php">Pokaż wszystkie posty</a>
     </div>
     </div>
     <div class="b">
