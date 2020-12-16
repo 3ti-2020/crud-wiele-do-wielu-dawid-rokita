@@ -52,6 +52,10 @@ body{
     height: auto;
     padding: 20px;
     background: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
     /*border-radius: 0 0 10px 10px;*/
 }
 
@@ -86,4 +90,10 @@ a{
     border-bottom: 1px solid black;
     font-size: 15px;
     margin-left: 5px;
+}
+
+img{
+    width:200px;
+    height: 200px;
+    padding: 10px;
 }

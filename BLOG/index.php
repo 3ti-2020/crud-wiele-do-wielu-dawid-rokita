@@ -18,9 +18,9 @@
 
         if(isset($_GET['akcja'])){  //sprawdzenie czy został klikniety jakis tag
             $zmienna = $_GET['akcja'];
-            $result = $conn->query("SELECT Distinct tytul, tekst, posty.id FROM `posty_tagi`, posty, tagi WHERE posty_tagi.id_posty = posty.id AND posty_tagi.id_tagi = tagi.id AND nazwa = '$zmienna'"); 
+            $result = $conn->query("SELECT Distinct tytul, tekst, posty.id, img FROM `posty_tagi`, posty, tagi WHERE posty_tagi.id_posty = posty.id AND posty_tagi.id_tagi = tagi.id AND nazwa = '$zmienna'"); 
         }else{
-            $result = $conn->query("SELECT Distinct tytul, tekst, id FROM posty");  
+            $result = $conn->query("SELECT Distinct tytul, tekst, id, img FROM posty");  
         }     
     ?>
 
@@ -47,6 +47,7 @@
                 echo("</div>");
                 echo("<div class='main'>");
                     echo("<p>".$wiersz['tekst']."</p>");
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode( $wiersz['img'] ).'"/>';
                 echo("</div>");
             }
         ?>
