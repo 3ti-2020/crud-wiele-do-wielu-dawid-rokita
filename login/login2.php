@@ -200,7 +200,7 @@
         <div class="bg-modal">
             <div class="modal-content">
                 <div class="close">+</div>
-                <img src="../profile.jpg" alt="">
+                <img src="../profile.png" alt="">
                 <form action="login2.php" method="POST">
                     LOGIN: <input class="inputy" type="text" name="login" placeholder="login...">
                     HASLO: <input class="inputy" type="text" name="haslo" placeholder="haslo...">
