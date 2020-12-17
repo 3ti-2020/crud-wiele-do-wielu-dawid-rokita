@@ -13,7 +13,7 @@ h1{
 }
 
 .upper{
-    background-color: #5680E9;
+    background-color: rgb(165, 165, 165);
     width: 100%;
     height: 50vh;
     display: flex;
@@ -23,7 +23,7 @@ h1{
 }
 
 .lower{
-    background-color:#5680E9;
+    background-color:rgb(165, 165, 165);
     width: 100%;
     height: 50vh;
 }
@@ -53,7 +53,7 @@ a{
 .modal-content{
     width: 500px;
     height: 300px;
-    background-color: white;
+    background-color: rgb(165, 165, 165);
     border-radius: 10px;
     text-align: center;
     padding: 25px;
@@ -69,8 +69,9 @@ img{
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    color: rgb(255, 255, 255);
-    background: rgb(98, 98, 199);
+    color:rgb(165, 165, 165);
+    /* background: rgb(98, 98, 199); */
+    background: rgb(53, 53, 53);
     border-radius: 15px;
 }
 
@@ -78,9 +79,10 @@ img{
     width: 50%;
     height: 25px;
     border-radius: 10px;
-    border: 1px solid rgb(98, 98, 199);
+    border: 1px solid rgb(0, 0, 0);
     display: block;
     margin: 15px auto;
+    color:rgb(165, 165, 165);
 }
 
 .close{
@@ -97,5 +99,6 @@ input{
     height: 25px;
     border-radius: 10px;
     border:0;
-    background:  #84CEEB;
+    background:   rgb(53, 53, 53);
+    color:rgb(165, 165, 165);
 }

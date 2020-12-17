@@ -44,7 +44,7 @@
                     $result2 = $conn->query("SELECT nazwa FROM `posty_tagi`, posty, tagi WHERE posty_tagi.id_posty = posty.id AND posty_tagi.id_tagi = tagi.id AND posty_tagi.id_posty = $posty");
                 while($wiersz2 = $result2->fetch_assoc()){
                     echo("<tr><b><a href='?akcja=".$wiersz2['nazwa']."'>".$wiersz2['nazwa']."</a></b></tr>, ");
-                } 
+                }
                 echo("</div>");
                 echo("<div class='main'>");
                     echo("<p>".$wiersz['tekst']."</p>");

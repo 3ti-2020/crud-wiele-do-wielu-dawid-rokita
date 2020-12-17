@@ -3,12 +3,15 @@
 }
 
 body{
-    background: #2a4049;
+    /* background: #2a4049; */
+    background: rgb(165, 165, 165);
+
 }
 
 .item1{
     grid-area: a;
-    background: #5680E9;
+    /* background: #5680E9; */
+    background: rgb(224, 219, 219);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +29,7 @@ body{
 
 .item22{
     grid-area: b;
-    background: #2a4049;
+    background: rgb(165, 165, 165);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -35,13 +38,15 @@ body{
 
 .item3{
     grid-area: c;
-    background: #2a4049;
+    /* background: #2a4049; */
+    background: rgb(165, 165, 165);
     display: none;
 }
 
 .item4{
     grid-area: d;
-    background: #5AB9EA;
+    /* background: #5AB9EA; */
+    background: rgb(53, 53, 53);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,9 +90,10 @@ li{
 .linka{
     position: absolute;
     text-decoration: none;
-    color: black;
+    color: rgb(165, 165, 165);
     padding: 20px 60px;
-    background:  #84CEEB;
+    /* background:  #84CEEB; */
+    background: rgb(53, 53, 53);
     top: 300px;
     border-radius: 10px;
 }
@@ -95,9 +101,10 @@ li{
 .linkb{
     position: absolute;
     text-decoration: none;
-    color: black;
+    color: rgb(165, 165, 165);
     padding: 20px 60px;
-    background: #84CEEB;
+    /* background: #84CEEB; */
+    background: rgb(53, 53, 53);
     top: 220px;
     border-radius: 10px;
 }
@@ -105,9 +112,10 @@ li{
 .linkbb{
     position: absolute;
     text-decoration: none;
-    color: black;
+    color: rgb(165, 165, 165);
     padding: 20px 60px;
-    background: #84CEEB;
+    /* background: #84CEEB; */
+    background: rgb(53, 53, 53);
     top: 220px;
     border-radius: 10px;
 }
@@ -173,6 +181,7 @@ table,tr,td{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .lower{
@@ -182,6 +191,7 @@ table,tr,td{
     justify-content: center;
     align-items: center;
     display: none;
+
 }
 
 div{
@@ -193,7 +203,9 @@ input{
     height: 25px;
     border-radius: 10px;
     border:0;
-    background:  #84CEEB;
+    /* background:  #84CEEB; */
+    background: rgb(53, 53, 53);
+    color: rgb(165, 165, 165);
 }
 
 .bg-modal{
@@ -212,7 +224,7 @@ input{
 .modal-content{
     width: 500px;
     height: 300px;
-    background-color: white;
+    background-color: rgb(165, 165, 165);
     border-radius: 10px;
     text-align: center;
     padding: 25px;
@@ -229,7 +241,8 @@ img{
     text-align: center;
     text-decoration: none;
     color: rgb(255, 255, 255);
-    background: rgb(98, 98, 199);
+    /* background: rgb(98, 98, 199); */
+    background: rgb(53, 53, 53);
     border-radius: 15px;
 }
 
@@ -237,7 +250,7 @@ img{
     width: 50%;
     height: 25px;
     border-radius: 10px;
-    border: 1px solid rgb(98, 98, 199);
+    border: 1px solid rgb(0, 0, 0);
     display: block;
     margin: 15px auto;
 }
@@ -279,4 +292,12 @@ img{
 h5{
     padding: 10px;
     color: rgb(231, 162, 162);
+}
+
+h3{
+    color:  rgb(224, 219, 219);
+}
+
+.noweksiazki{
+    color: rgb(53, 53, 53);
 }

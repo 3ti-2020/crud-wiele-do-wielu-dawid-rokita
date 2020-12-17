@@ -55,7 +55,7 @@
         <div class="item3">
             <form action="insert.php" method="POST">
                 <ul>
-                    <li><h3>DODAJ NOWE KSIĄŻKI: </h3></li>
+                    <li><h3 class="noweksiazki">DODAJ NOWE KSIĄŻKI: </h3></li>
                     <li>AUTOR:<input type="text" name="name"></li>
                     <li>TYTUL:<input type="text" name="tytul"></li>
                     <li><input type="submit" value="DODAJ"></li>
